@@ -13,6 +13,15 @@ terraform {
   }
 }
 
+variable "secrets" {
+  type = map(string)
+  default = {
+    subscription_id = var.subscription_id
+    tenant_id = var.tenant_id
+    client_id = var.client_id
+  }
+}
+
 provider "azurerm" {
   features {}
 }
