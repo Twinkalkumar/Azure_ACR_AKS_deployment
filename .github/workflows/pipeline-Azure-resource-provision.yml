@@ -26,6 +26,9 @@ jobs:
 
             - name: terraform setup
               uses: hashicorp/setup-terraform@v3
+
+            - name: Terraform initialized
+              run: terraform init
               
             - name: Terraform Formate Codes
               run:  terraform fmt
