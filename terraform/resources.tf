@@ -6,7 +6,6 @@ locals {
   }
   location = "westus2"
   dns      = "dns-aks"
-  node_rg  = "demo-aks-nodes"
 }
 
 resource "azurerm_resource_group" "rg" {
@@ -27,7 +26,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = local.location
   dns_prefix          = local.dns
-  node_resource_group = local.node_rg
+  node_resource_group = azurerm_resource_group.rg.name
 
   default_node_pool {
     name       = "systempool"

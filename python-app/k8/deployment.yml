@@ -1,4 +1,4 @@
-apiversion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-python-app
@@ -15,10 +15,10 @@ spec:
         app: my-python-app
     spec:
       containers:
-      - name: my-python-app
-        image: ${IMAGE_AND_TAG}
-        ports:
-        - containerPort: 8080
-        env:
-        - name: ENV
-          value: "prod"
+        - name: my-python-app
+          image: ${IMAGE_AND_TAG}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ENV
+              value: "prod"
